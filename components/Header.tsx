@@ -23,13 +23,13 @@ const Header = () => {
     <Wrapper
       as="header"
       aria-label="Header"
-      className="flex items-center justify-between py-8"
+      className="flex items-center justify-between py-12"
     >
       <Link href={"/"}>
         <Image src="/logo.svg" alt="Logo" width={128} height={20} />
       </Link>
       {/* Navigation Links For Desktop */}
-      <nav className="lg:hidden">
+      <nav className="hidden lg:flex">
         <ul className="flex items-center justify-between gap-8">
           {navigation.map((item) => (
             <li key={item.id}>
