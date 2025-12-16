@@ -3,7 +3,10 @@ import { Separator } from "./ui/separator";
 
 const ProgressBar = () => {
   return (
-    <div className="w-[327px] md:w-[672px] lg:w-[730px] flex flex-col items-center bg-white rounded-lg md:h-[210px] h-[412px] p-12 lg:h-[212px] gap-4 md:items-start">
+    <div
+      aria-label="App Data"
+      className="w-[327px] md:w-[672px] lg:w-[730px] flex flex-col items-center bg-white rounded-lg md:h-[210px] h-[412px] p-12 lg:h-[212px] gap-4 md:items-start"
+    >
       {/* Title */}
       <div className="flex flex-col items-center justify-center md:flex-row md:justify-between md:items-start gap-6">
         <div className="flex flex-col items-center justify-center md:items-start">

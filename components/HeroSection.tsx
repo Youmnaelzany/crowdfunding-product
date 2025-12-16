@@ -3,7 +3,10 @@ import Header from "@/components/Header";
 
 export default function HeroSection() {
   return (
-    <section className="relative h-[300px] md:h-[400px] lg:h-[450px] w-full">
+    <section
+      aria-label="Hero Section"
+      className="relative h-[300px] md:h-[400px] lg:h-[450px] w-full"
+    >
       {/* Background Image */}
       <Image
         src="/image-hero-desktop.jpg"
