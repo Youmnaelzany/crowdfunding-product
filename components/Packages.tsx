@@ -33,38 +33,49 @@ const packagesData = [
 const Packages = () => {
   return (
     <div className="py-6 flex flex-col gap-6 md:py-8">
-      {packagesData.map((items) => (
-        <div
-          className="max-w-[634px] max-h-[370px] p-6 md:p-8 flex flex-col rounded-xl border border-[#D9D9D9] md:max-h-[248px]"
-          key={items.id}
-        >
-          <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
-            <h3 className="text-black font-bold leading-[125%] text-sm tracking-normal md:text-lg">
-              {items.title}
-            </h3>
-            <h4 className="text-[#3CB3AB] font-medium leading-[125%] text-sm tracking-normal md:text-[0.9375rem]">
-              {items.label}
-            </h4>
+      {packagesData.map((items) => {
+        const isOutOfStock = items.daysLeft === "0";
+        return (
+          <div
+            className={`max-w-[634px] max-h-[370px] p-6 md:p-8 flex flex-col rounded-xl border border-[#D9D9D9] md:max-h-[248px] ${
+              isOutOfStock ? "opacity-50" : ""
+            }`}
+            key={items.id}
+            aria-disabled={isOutOfStock}
+          >
+            <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+              <h3 className="text-black font-bold leading-[125%] text-sm tracking-normal md:text-lg">
+                {items.title}
+              </h3>
+              <h4 className="text-[#3CB3AB] font-medium leading-[125%] text-sm tracking-normal md:text-[0.9375rem]">
+                {items.label}
+              </h4>
+            </div>
+            <p className="pt-4 pb-6 md:pb-4 md:pt-6 text-[#7A7A7A] font-normal leading-[175%] text-sm tracking-normal md:text-base md:leading-[200%]">
+              {items.description}
+            </p>
+            <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6">
+              <h5 className="text-[#7A7A7A] font-normal text-[0.9375rem] tracking-normal leading-[200%] flex items-center gap-2">
+                <span className="text-black font-bold text-[2rem] leading-[125%]">
+                  {items.daysLeft}
+                </span>
+                left
+              </h5>
+              <Button
+                type="submit"
+                className={`w-[157px] h-[48px] rounded-full text-white ease-in duration-700 transition-colors font-bold text-sm tracking-normal leading-[125%] ${
+                  isOutOfStock
+                    ? "bg-[#2F2F2F] cursor-not-allowed"
+                    : "bg-[#3CB3AB] hover:bg-[#147A73]"
+                }`}
+                disabled={isOutOfStock}
+              >
+                {items.submit}
+              </Button>
+            </div>
           </div>
-          <p className="pt-4 pb-6 md:pb-4 md:pt-6 text-[#7A7A7A] font-normal leading-[175%] text-sm tracking-normal md:text-base md:leading-[200%]">
-            {items.description}
-          </p>
-          <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6">
-            <h5 className="text-[#7A7A7A] font-normal text-[0.9375rem] tracking-normal leading-[200%] flex items-center gap-2">
-              <span className="text-black font-bold text-[2rem] leading-[125%]">
-                {items.daysLeft}
-              </span>
-              left
-            </h5>
-            <Button
-              type="submit"
-              className="w-[157px] h-[48px] rounded-full bg-[#3CB3AB] text-white hover:bg-[#147A73] ease-in duration-700 transition-colors font-bold text-sm tracking-normal leading-[125%]"
-            >
-              {items.submit}
-            </Button>
-          </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
