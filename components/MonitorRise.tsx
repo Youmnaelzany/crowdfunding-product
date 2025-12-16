@@ -4,12 +4,13 @@ import { BookmarkCheck } from "lucide-react";
 
 const MonitorRise = () => {
   return (
-    <div className="w-[327px] md:w-[672px] lg:w-[730px] flex flex-col items-center justify-center bg-white rounded-lg md:h-[269px] h-[284px] relative">
+    <div className="w-[327px] md:w-[672px] lg:w-[730px] flex flex-col items-center justify-center bg-white rounded-lg md:h-[269px] min-h-[284px] relative">
       <Image
         src="/logo-mastercraft.svg"
-        alt=""
+        alt="Logo"
         width={56}
         height={56}
+        priority={false}
         className="absolute -top-8 inset-x-0 mx-auto"
       />
       <div className="md:gap-8 gap-6 flex flex-col">
