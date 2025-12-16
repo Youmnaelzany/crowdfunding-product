@@ -21,7 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={commissioner.variable}>
       <body
-        className={`${commissioner.variable} bg-[url('/image-hero-mobile.jpg')] md:bg-[url('/image-hero-desktop.jpg')] bg-cover bg-no-repeat max-w-360 mx-auto antialiased`}
+        suppressHydrationWarning={true}
+        className={`${commissioner.variable} bg-[#FAFAFA] bg-[url('/image-hero-mobile.jpg')] lg:bg-[url('/image-hero-desktop.jpg')] bg-cover bg-no-repeat bg-center max-w-[1440px] mx-auto  antialiased`}
       >
         <Header />
         {children}
