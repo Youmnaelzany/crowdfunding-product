@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { BookmarkCheck } from "lucide-react";
+import BackThisProject from "./BackThisProject";
 
 const MonitorRise = () => {
   return (
@@ -30,12 +31,7 @@ const MonitorRise = () => {
         {/* Button Section */}
         <div className="flex items-center justify-center md:justify-between gap-4">
           {/* Back this project TODO: Dynamic Button */}
-          <Button
-            type="button"
-            className="rounded-full bg-[#3CB3AB] hover:bg-[#147A73] cursor-pointer transition-colors duration-700 ease-in w-[214px] h-[56px] text-white text-base leading-[125%] font-bold tracking-normal"
-          >
-            Back this project
-          </Button>
+          <BackThisProject />
           {/* Mobile Bookmark BTN */}
           <Button
             type="button"
